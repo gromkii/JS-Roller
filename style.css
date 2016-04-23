@@ -1,0 +1,17 @@
+.die{
+  background-color:#bada55;
+  height:100px;
+  width:100px;
+  float:left;
+  margin: 5px;
+  border-radius:5px;
+}
+
+.die h3 {
+  font-size:2em;
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content: center;
+
+}
