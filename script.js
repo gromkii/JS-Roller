@@ -8,19 +8,37 @@ $(document).ready(function(){
 
     $("#dice-output").html("");
 
+    printDice($numDice,$randomRange,totalRoll, $output, rollOutput);
 
-    for(i=0;i<$numDice;i++){
-      var thisRoll = 0;
+    // for(i=0;i<$numDice;i++){
+    //   var thisRoll = 0;
+    //
+    //   thisRoll = Math.floor( ( Math.random() * $randomRange ) + 1 );
+    //   rollOutput.push(thisRoll);
+    //
+    //   totalRoll += thisRoll;
+    //
+    //   $output.text(totalRoll);
+    //
+    //   //TODO: Delay between each iteration of the loop.
+    //   $("#dice-output").append("<div class=\"die\"><h3>" + rollOutput[i] + "</h3></div>").hide().fadeIn('slow');
+    // }
+    function printDice($numdice,$randomRange,totalRoll, output, rollOutput){
+      for(i=0;i<$numDice;i++){
+        var thisRoll = 0;
 
-      thisRoll = Math.floor( ( Math.random() * $randomRange ) + 1 );
-      rollOutput.push(thisRoll);
+        thisRoll = Math.floor( ( Math.random() * $randomRange ) + 1 );
+        rollOutput.push(thisRoll);
 
-      totalRoll += thisRoll;
+        totalRoll += thisRoll;
 
-      $output.text(totalRoll);
+        $output.text(totalRoll);
 
-      //TODO: Push each result into an array, list.
-      $("#dice-output").append("<div class=\"die\"><h3>" + rollOutput[i] + "</h3></div>").hide().fadeIn('slow');
+        //TODO: Delay between each iteration of the loop.
+        $("#dice-output").append("<div class=\"die\"><h3>" + rollOutput[i] + "</h3></div>").hide().fadeIn('fast');
+        
+
+      }
     }
   });
 });
