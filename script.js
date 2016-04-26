@@ -21,7 +21,7 @@ $(document).ready(function(){
 
       $output.text(totalRoll);
 
-      //TODO: Delay between each iteration of the loop.
+      //TODO: Delay between each iteration of the loop. srsly.
       $("#dice-output").append("<div class=\"die\"><h3>" + rollOutput[i] + "</h3></div>").hide().fadeIn('slow');
       }
     }
