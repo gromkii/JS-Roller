@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     $("#dice-output").html("");
 
-    printDice($numDice,$randomRange,totalRoll, $output, rollOutput);
+  printDice($numDice,$randomRange,totalRoll, $output, rollOutput);
 
   function printDice($numdice,$randomRange,totalRoll, output, rollOutput){
     for(i=0;i<$numDice;i++){
@@ -22,6 +22,7 @@ $(document).ready(function(){
       $output.text(totalRoll);
 
       //TODO: Delay between each iteration of the loop. srsly.
+
       $("#dice-output").append("<div class=\"die\"><h3>" + rollOutput[i] + "</h3></div>").hide().fadeIn('slow');
       }
     }
