@@ -23,7 +23,8 @@ $(document).ready(function(){
 
       //TODO: Delay between each iteration of the loop. srsly.
 
-      $("#dice-output").append("<div class=\"die\"><h3>" + rollOutput[i] + "</h3></div>").hide().fadeIn('slow');
+      $("#dice-output").append("<div class=\"die\"><h3>" + thisRoll + "</h3></div>").hide().fadeIn('slow');
+      setTimeout(200);
       }
     }
   });
