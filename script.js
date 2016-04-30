@@ -1,31 +1,45 @@
 $(document).ready(function(){
   $("#roller").on('click',function(){
-    var $numDice = $("#num-dice").val();
-    var $randomRange = $("#text-field").val();
-    var totalRoll = 0;
-    var $output = $('main section h2');
-    var rollOutput = [];
+    var $numDice     = $("#num-dice").val(),
+        $randomRange = $("#text-field").val(),
+        totalRoll    = 0,
+        $output      = $('main section h2'),
+        rollOutput   = [];
 
     $("#dice-output").html("");
 
-  printDice($numDice,$randomRange,totalRoll, $output, rollOutput);
+    rollDice($numDice, $randomRange, totalRoll, rollOutput, $output);
 
-  function printDice($numdice,$randomRange,totalRoll, output, rollOutput){
-    for(i=0;i<$numDice;i++){
-      var thisRoll = 0;
+    //TODO : Refactor outputDice to work recursively.
 
-      thisRoll = Math.floor( ( Math.random() * $randomRange ) + 1 );
-      rollOutput.push(thisRoll);
 
-      totalRoll += thisRoll;
+    function rollDice(numDice,randomRange, totalRoll,rollOutput,output){
 
-      $output.text(totalRoll);
-
-      //TODO: Delay between each iteration of the loop. srsly.
-
-      $("#dice-output").append("<div class=\"die\"><h3>" + thisRoll + "</h3></div>").hide().fadeIn('slow');
-      setTimeout(200);
+      for (var i = 0; i < numDice; i++){
+        var thisRoll = Math.floor(Math.random() * randomRange) + 1;
+        totalRoll += thisRoll;
+        rollOutput.push(thisRoll);
       }
+
+      output.text(totalRoll);
+
+      console.log(rollOutput);
+
+      outputDice(output)
     }
+
+    function outputDice(output){
+      console.log("This works. " + output);
+
+
+      rollOutput.forEach(function(element,index){
+        setTimeout(function(){
+          $("#dice-output")
+          .append("<div class=\"die\"><h3>" + element + "</h3></div>")
+          .slideIn();
+        }, index * 150);
+      });
+    }
+
   });
 });

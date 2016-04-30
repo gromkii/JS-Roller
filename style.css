@@ -39,6 +39,7 @@ body main section h2 {
   float:left;
   margin: 5px;
   border-radius:5px;
+  display:hidden;
 }
 
 .die h3 {
