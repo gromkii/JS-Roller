@@ -34,10 +34,11 @@ $(document).ready(function(){
 
       rollOutput.forEach(function(element,index){
         setTimeout(function(){
-          $("#dice-output")
-          .append("<div class=\"die\"><h3>" + element + "</h3></div>")
-          .slideIn();
-        }, index * 150);
+          $("<div class=\"die\"><h3>" + element + "</h3></div>")
+          .appendTo("#dice-output")
+          .hide()
+          .fadeIn('1000');
+        }, index * 100);
       });
     }
 
