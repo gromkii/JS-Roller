@@ -1,3 +1,5 @@
+//TODO: Multiple rows for different die types.
+
 $(document).ready(function(){
   $("#roller").on('click',function(){
     var $numDice     = $("#num-dice").val(),
@@ -37,7 +39,7 @@ $(document).ready(function(){
           $("<div class=\"die\"><h3>" + element + "</h3></div>")
           .appendTo("#dice-output")
           .hide()
-          .fadeIn('1000');
+          .slideDown(1000);
         }, index * 100);
       });
     }
