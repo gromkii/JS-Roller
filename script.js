@@ -39,7 +39,7 @@ $(document).ready(function(){
           $("<div class=\"die\"><h3>" + element + "</h3></div>")
           .appendTo("#dice-output")
           .hide()
-          .slideDown(1000);
+          .fadeIn(1000);
         }, index * 100);
       });
     }
